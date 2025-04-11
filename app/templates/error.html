@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ code }} Error{% endblock %}
+
+{% block content %}
+<div class="ui middle aligned center aligned grid">
+    <div class="column">
+        <div class="ui attached message">
+            <div class="header ui image ">
+                <img src="{{ url_for('static', filename='logo.png') }}" class="image">
+                <div class="content">
+                    <span class="text">{{ code }}</span>
+                </div>
+            </div>
+            <p>{{ description }}</p>
+            <a class="icon" href="{{ url_for('main.index') }}">Return Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

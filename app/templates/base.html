@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block head %}
+        <title>{% block title %}Say Hello!{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        {% block styles %}
+            <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+        {% endblock styles %}
+    {% endblock head %}
+</head>
+<body>
+
+    {% block navbar %}
+        {% include '_includes/_nav.html' %}
+    {% endblock %}
+
+<main class="container">
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}
+        {% include '_includes/_footer.html' %}
+    {% endblock %}
+    <div class="to-top"></div>
+</main>
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    {{ moment.include_moment(local_js=url_for('static', filename='js/moment-with-locales.min.js')) }}
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>
