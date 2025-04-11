@@ -15,7 +15,7 @@
 1.  **克隆仓库**:
 
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/h1s97x/Flask-OAuth2.git
     cd flask_app
     ```
 
@@ -43,23 +43,9 @@
 
     ```dotenv
     # Flask
-    FLASK_APP=wsgi.py # 假设入口文件是 wsgi.py
+    FLASK_APP=app
     FLASK_ENV=development
     SECRET_KEY='your-very-secret-key' # 必须设置一个强密钥
-
-    # 数据库 (如果使用 SQLite, 则无需配置 MySQL)
-    # USE_SQLITE=True # 取消注释以强制使用 SQLite
-    # MYSQL_HOST=127.0.0.1
-    # MYSQL_PORT=3306
-    # MYSQL_USER=root
-    # MYSQL_PASS=your_mysql_password
-    # MYSQL_DB=database_learn
-
-    # 邮件配置 (可选, 如果需要邮件功能)
-    # MAIL_SERVER='smtp.example.com'
-    # MAIL_PORT=465
-    # MAIL_USERNAME='your-email@example.com'
-    # MAIL_PASSWORD='your-email-password'
 
     # Google OAuth 2.0
     GOOGLE_CLIENT_ID='your-google-client-id.apps.googleusercontent.com'
@@ -70,13 +56,13 @@
     GITHUB_CLIENT_SECRET='your-github-client-secret'
     ```
 
-    **重要**: 请确保从 Google Cloud Console 和 GitHub Developer Settings 获取您的 OAuth 客户端 ID 和密钥，并配置正确的授权重定向 URI (例如，对于 Google，可能是 `http://localhost:5000/auth/callback/google`；对于 GitHub，可能是 `http://localhost:5000/auth/callback/github`)。
+    **重要**: 请确保从 Google Cloud Console 和 GitHub Developer Settings 获取您的 OAuth 客户端 ID 和密钥，并配置正确的授权重定向 URI (对于 Google，可能是 `http://localhost:5000/auth/callback/google`；对于 GitHub，可能是 `http://localhost:5000/auth/callback/github`)。
 
 5.  **初始化数据库**:
 
     ```bash
     flask initdb
-    flask init # 初始化角色等
+    flask init # 初始化User等
     ```
 
 ## 运行应用
